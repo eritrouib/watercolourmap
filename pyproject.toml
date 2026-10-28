@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "watercolourmap"
+version = "0.1.0"
+description = "Watercolour maps in Python, inspired by John Nelson's watercolour style for ArcGIS Pro"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Eriola Trungu Impersimi" }]
+license = "MIT"
+license-files = ["LICENSE", "src/watercolourmap/fonts/*.txt"]
+keywords = ["cartography", "maps", "watercolour", "watercolor", "geopandas", "land cover", "urban atlas", "copernicus"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: GIS",
+    "Topic :: Multimedia :: Graphics",
+    "Intended Audience :: Science/Research",
+]
+dependencies = [
+    "geopandas>=1.0",
+    "pyogrio>=0.9",
+    "shapely>=2.0",
+    "rasterio>=1.3",
+    "scipy>=1.11",
+    "numpy>=1.26",
+    "matplotlib>=3.8",
+]
+
+[project.urls]
+Homepage = "https://etymo.co.uk/cartography/"
+
+[project.scripts]
+watercolourmap = "watercolourmap.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+watercolourmap = ["fonts/*"]
